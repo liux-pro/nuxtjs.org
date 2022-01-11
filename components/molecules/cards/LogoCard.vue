@@ -9,20 +9,23 @@
       <AppLink :to="item.to || item.link" :aria-label="item.title" class="absolute inset-0" />
     </template>
     <div class="ListCard-body">
-      <NuxtImg
+      <img
         v-if="item.logo && item.logo.dark"
+        loading="lazy"
         :alt="`${item.title} logo`"
         :src="item.logo.dark"
         class="dark-img w-12 h-12 mr-4 rounded-md"
       />
-      <NuxtImg
+      <img
         v-if="item.logo && item.logo.light"
+        loading="lazy"
         :alt="`${item.title} logo`"
         :src="item.logo.light"
         class="light-img w-12 h-12 mr-4 rounded-md"
       />
-      <NuxtImg
+      <img
         v-if="typeof item.logo === 'string'"
+        loading="lazy"
         :alt="`${item.title} logo`"
         :src="item.logo || ''"
         class="w-12 h-12 mr-4 rounded-md"
